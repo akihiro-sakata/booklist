@@ -1,7 +1,7 @@
  <h1>登録本一覧</h1>
   <ul>
     <% @books.each do |book| %>
-    <li><%= link_to book.id, book %> : <%= book.create_at %> <%= category %> <%= book.title %></li>
+    <li><%= link_to book.id, book %> : <%= book.create_at %> <%= book.category %> <%= book.title %></li>
     <% end %>
   </ul>
 

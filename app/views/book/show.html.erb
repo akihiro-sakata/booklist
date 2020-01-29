@@ -1,8 +1,9 @@
-<h1>id: <%= @task.id %> タスクの詳細ページ</h1>
+<h1>id: <%= @book.id %> 登録本の詳細ページ</h1>
 
-<p>タスク: <%= @task.content %></p>
-<p>ステータス: <%= @task.status %></p>
+<li><%= link_to book.id, book %> : <%= @book.create_at %> <%= @book.category %> <%= @book.title %></li>
+<li>内容: <%= @book.content %></li>
 
-<%= link_to '一覧に戻る', tasks_path %>
-<%= link_to 'このタスクを編集する', edit_task_path(@task) %>
-<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+<%= link_to '一覧に戻る', books_path %>
+<%= link_to 'この本を編集する', edit_book_path(@book) %>
+<%= link_to 'この本を削除する', @book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

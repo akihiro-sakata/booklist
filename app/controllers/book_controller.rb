@@ -4,7 +4,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
 
   def index
-      @books = current_user.books.page(params[:page]).per(10)
+      @books = Book.order(date: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -18,10 +18,10 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
     @book = current_user.books.build(book_params)
 
     if @book.save
-      flash[:success] = '読書記録が正常に登録されました'
+      flash[:success] = '本は正常に登録されました'
       redirect_to @book
     else
-      flash.now[:danger] = '読書記録が投稿されませんでした'
+      flash.now[:danger] = '本が投稿されませんでした'
       render :new
     end
   end
@@ -31,10 +31,10 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   def update
     if @book.update(book_params)
-      flash[:success] = '読書記録は正常に更新されました'
+      flash[:success] = '本は正常に更新されました'
       redirect_to @task
     else
-      flash.now[:danger] = '読書記録は更新されませんでした'
+      flash.now[:danger] = '本が更新されませんでした'
       render :edit
     end
   end
@@ -42,7 +42,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
   def destroy
     @book.destroy
 
-    flash[:success] = '読書記録は正常に削除されました'
+    flash[:success] = '本は正常に削除されました'
     redirect_to books_url
   end
 

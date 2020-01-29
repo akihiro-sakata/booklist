@@ -1,0 +1,27 @@
+<div class="text-center">
+  <h1>Show</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+    <%= form_with(model: @user, local: true) do |f| %>
+      
+      <div class="form-group">
+        <%= @user.name %>
+      </div>
+
+      <div class="form-group">
+        <%= @user.email %>
+      </div>
+
+      <div class="form-group">
+        <%= @user.password %>
+      </div>
+
+
+      <%= link_to '戻る', root_path %>
+      <%= link_to 'ユーザー登録を削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+    <% end %>
+  </div>
+</div>
