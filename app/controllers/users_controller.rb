@@ -21,11 +21,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy 
+    @user = User.find(params[:id])
     @user.destroy
-
-    flash[:success] = 'ユーザー登録が正常に削除されました'
-    redirect_to root_path
+    flash[:success] = 'ユーザー情報は正常に削除されました'
+    redirect_to("/")
   end
 
 

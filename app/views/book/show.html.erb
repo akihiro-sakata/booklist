@@ -1,9 +1,0 @@
-<h1>id: <%= @book.id %> 登録本の詳細ページ</h1>
-
-<li><%= link_to book.id, book %> : <%= @book.create_at %> <%= @book.category %> <%= @book.title %></li>
-<li>内容: <%= @book.content %></li>
-
-
-<%= link_to '一覧に戻る', books_path %>
-<%= link_to 'この本を編集する', edit_book_path(@book) %>
-<%= link_to 'この本を削除する', @book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

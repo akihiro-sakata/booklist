@@ -4,7 +4,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
 
   def index
-      @books = Book.order(date: :desc).page(params[:page]).per(10)
+      @books = current_user.books.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -32,7 +32,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
   def update
     if @book.update(book_params)
       flash[:success] = '本は正常に更新されました'
-      redirect_to @task
+      redirect_to @book
     else
       flash.now[:danger] = '本が更新されませんでした'
       render :edit

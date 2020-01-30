@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>Show</h1>
+  <h1>ユーザー登録内容</h1>
 </div>
 
 <div class="row">
@@ -8,20 +8,18 @@
     <%= form_with(model: @user, local: true) do |f| %>
       
       <div class="form-group">
-        <%= @user.name %>
+        名前：<%= @user.name %>
       </div>
 
       <div class="form-group">
-        <%= @user.email %>
-      </div>
-
-      <div class="form-group">
-        <%= @user.password %>
+        Email：<%= @user.email %>
       </div>
 
 
-      <%= link_to '戻る', root_path %>
-      <%= link_to 'ユーザー登録を削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+
+      <li><%= link_to '登録した本の一覧へ', root_path %></li>
+      <li><%= link_to 'ユーザー登録を削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+      <p>※ユーザー登録を削除すると、登録した本の情報も一緒に削除されます。</p>
     <% end %>
   </div>
 </div>
