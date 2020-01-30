@@ -1,13 +1,28 @@
 <h1>登録した本の詳細ページ</h1>
 
-　<li> No.<%= @book.id %></li>
-　<li>登録日　：<%= @book.created_at.strftime("%Y-%m-%d") %></li>
-  <li>カテゴリ：<%= @book.category %></li>
-  <li>タイトル：<%= @book.title %></li>
-  <li>内容　　：<%= @book.content%></li>
+  <table class="table table-bordered">
+    <tr>
+      <th>No.　　　　</th>
+      <td><%= @book.id %></td>
+    </tr>
+    <tr>
+      <th>登録日　　　</th>
+      <td><%= @book.created_at.strftime("%Y-%m-%d") %></td>
+    </tr>
+    <tr>
+      <th>カテゴリ　　</th>
+      <td><%= @book.category %></td>
+    </tr>
+    <tr>
+      <th>タイトル　　</th>
+      <td><%= @book.title %></td>
+    </tr>
+      <th>内容　　　</th>
+      <td><%= @book.content%></td>
+    </tr>
+  </table>
 
 
-
-<%= link_to '一覧に戻る', root_path %>
-<%= link_to 'この本を編集する', edit_book_path(@book) %>
-<%= link_to 'この本を削除する', @book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to '一覧に戻る', root_path, class: 'btn btn-primary' %>
+<%= link_to 'この本を編集する', edit_book_path(@book), class: 'btn btn-primary' %>
+<%= link_to 'この本を削除する', @book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } , class: 'btn btn-primary'%>

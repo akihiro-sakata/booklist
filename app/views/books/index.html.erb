@@ -1,11 +1,31 @@
  <h1>登録した本の一覧</h1>
-  <ul>
-    <% @books.each do |book| %>
-    <li><%= link_to book.id, book %> : <%= book.created_at.strftime("%Y-%m-%d") %> <%= book.category %> <%= book.title %></li>
+ 
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>登録日</th>
+        <th>カテゴリ</th>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+     <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.id, book %></td>
+        <td><%= book.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= book.category %></td>
+        <td><%= book.title %></td>
+      </tr>
     <% end %>
-  </ul>
-
-  <%= paginate @books %>
-  <%= link_to '新規作成', new_book_path %>
-  </div>
-</div>
+    </tbody>
+    
+    <div>
+    <%= paginate @books %>
+    </div>
+    
+  </table>
+  
+  <%= link_to  '新規作成', new_book_path, class: "btn btn-primary" %>
+ 

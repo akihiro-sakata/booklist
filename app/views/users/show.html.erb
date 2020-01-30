@@ -6,19 +6,20 @@
   <div class="col-sm-6 offset-sm-3">
 
     <%= form_with(model: @user, local: true) do |f| %>
-      
-      <div class="form-group">
-        名前：<%= @user.name %>
-      </div>
+    
+    <table class="table table-bordered">
+    <tr>
+      <th>名前</th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= @user.email %></td>
+    </tr>
+  </table>
 
-      <div class="form-group">
-        Email：<%= @user.email %>
-      </div>
-
-
-
-      <li><%= link_to '登録した本の一覧へ', root_path %></li>
-      <li><%= link_to 'ユーザー登録を削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+      <%= link_to '登録した本の一覧へ', root_path, class: 'btn btn-primary' %>
+      <%= link_to 'ユーザー登録を削除する', @user, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-primary' %>
       <p>※ユーザー登録を削除すると、登録した本の情報も一緒に削除されます。</p>
     <% end %>
   </div>
