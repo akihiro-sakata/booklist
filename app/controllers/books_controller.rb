@@ -21,7 +21,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
       flash[:success] = '本は正常に登録されました'
       redirect_to @book
     else
-      flash.now[:danger] = '本が投稿されませんでした'
+      flash.now[:danger] = '正常に登録されませんでした'
       render :new
     end
   end
@@ -34,7 +34,7 @@ before_action :correct_user, only: [:show, :edit, :update, :destroy]
       flash[:success] = '本は正常に更新されました'
       redirect_to @book
     else
-      flash.now[:danger] = '本が更新されませんでした'
+      flash.now[:danger] = '正常に更新されませんでした'
       render :edit
     end
   end

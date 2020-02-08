@@ -1,4 +1,4 @@
- <h1>登録した本の一覧</h1>
+ <h1>お気に入りした本の一覧</h1>
 
   <table class="table table-striped">
     <thead>
@@ -12,7 +12,8 @@
     </thead>
     
     <tbody>
-     <% @books.each do |book| %>
+     <% @marks.each do |mark| %>
+     <% book = Book.find(mark.book_id) %>
       <tr>
         <td><%= link_to book.id, book %></td>
         <td><%= book.created_at.strftime("%Y-%m-%d") %></td>
@@ -24,9 +25,9 @@
     </tbody>
     
     <div>
-    <%= paginate @books %>
+    <%= paginate @marks %>
     </div>
     
   </table>
   
-  <%= link_to  '新規作成', new_book_path, class: "btn btn-primary" %>
+  <%= link_to  '全部の本の一覧に戻る', root_path, class: "btn btn-primary" %>

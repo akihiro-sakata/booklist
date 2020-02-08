@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+  @import "font-awesome-sprockets";
+  @import "font-awesome";
+
+/* ハートにグレー色つける*/
+  .like-btn {
+  color: #8899a6;
+}
+
+/* ハートにピンク色つける*/
+.like-btn-unlike {
+  color: #ff2581;
+}
