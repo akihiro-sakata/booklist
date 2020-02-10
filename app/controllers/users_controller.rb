@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
   def destroy 
     @user = User.find(params[:id])
     @user.destroy

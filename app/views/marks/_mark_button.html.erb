@@ -3,13 +3,12 @@
   
         <%= form_with(model: current_user.marks.find_by(book_id: book.id), local: true, method: :delete) do |f| %>
         <%= hidden_field_tag :book_id, book.id %>
-        <%= f.submit %>
-          <i class="fas fa-heart like-btn-unlike"></i>
+        <i class="fas fa-heart like-btn-unlike"></i>　<%= f.submit '解除', class: 'btn btn-danger' %>
+          
       <% end %>
       <% else %>
         <%= form_with(model: current_user.marks.build, local: true) do |f| %>
         <%= hidden_field_tag :book_id, book.id %>
-        <%= f.submit %>
-          <i class="far fa-heart like-btn"></i>
+        <i class="far fa-heart like-btn"></i>　<%= f.submit '登録', class: 'btn btn-primary' %>
       <% end %>
       <% end %>
